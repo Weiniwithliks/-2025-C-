@@ -3,6 +3,10 @@ long long mod_pow(long long b, long long n, long long m)
     // 根据模幂运算性质：b? mod m = ((b mod m)?) mod m
     long long result=1;
     b=b%m;
+    if(n==0)  //加入了n=0时的判断，处理一些边界问题
+    {
+        return 1%m;
+    }
     while (n>0)
     {
         if(n&1)  //n&1=1代表n是奇数
